@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<style>
+    	body { margin:0; padding:0; }
+    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:1000px; height:700px;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.466, -80.53], 14);
+
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+
+	L.marker([43.470, -80.529]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am Kaitlin's first added popup.").openPopup();
+	L.marker([43.468, -80.51]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am Kaitlin's second popup.").openPopup();
+	L.marker([43.473, -80.539]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am Kaitlin's third popup. Look at us go!").openPopup();
+	L.marker([43.461, -80.53]).addTo(mymap)
+		.bindPopup("<b><i>Hello world!</i></b><br />Fourth popup. Why stop now? Click to see where I learned how to attach an html link. <a href=https://www.w3schools.com/html/>Visit our HTML tutorial</a>").openPopup();
+
+</script>
+
+
+
+</body>
+</html>
